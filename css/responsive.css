@@ -1,0 +1,79 @@
+/* Mobile is the default. These rules scale up. */
+
+@media (min-width: 600px) {
+  .hero__actions { flex-direction: row; justify-content: center; }
+  .grid { gap: 18px; }
+  .contacts__grid { grid-template-columns: repeat(2, 1fr); }
+  .dish__info { padding: 16px 18px 18px; }
+  .dish__name { font-size: 17px; }
+  .dish__desc { font-size: 13.5px; }
+  .dish__price { font-size: 18px; }
+}
+
+@media (min-width: 960px) {
+  .hero { align-items: center; padding-bottom: 0; }
+  .menu { max-width: 860px; }
+  .grid { gap: 24px; }
+  .contacts__grid { grid-template-columns: repeat(3, 1fr); }
+  .search, .chips { max-width: 1180px; margin-left: auto; margin-right: auto; }
+  .search { padding: 0 16px; }
+  .search svg { left: 30px; }
+  .menu__heading { font-size: 34px; }
+  .menu__section { position: relative; }
+
+  .sheet__panel {
+    left: 50%; right: auto; bottom: auto; top: 50%;
+    width: 520px;
+    border-radius: 22px;
+    border: 1px solid var(--line);
+    transform: translate(-50%, -45%);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+  }
+  .sheet.is-open .sheet__panel { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+/* Side rails appear when there is real empty space next to the cards. */
+@media (min-width: 1180px) {
+  .rail {
+    display: block;
+    position: absolute;
+    top: 90px; bottom: 0;
+    width: 90px;
+  }
+  .rail--l { left: -150px; }
+  .rail--r { right: -150px; }
+
+  .rail__inner {
+    position: sticky;
+    top: calc(var(--bar-h) + 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .rail__num { font-family: var(--font-head); font-size: 34px; color: var(--accent); opacity: .85; }
+  .rail__line {
+    width: 1px; height: 90px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+  .rail__arrows { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .rail__arrows i {
+    width: 14px; height: 14px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    animation: flow 1.8s ease-in-out infinite;
+  }
+  .rail__arrows i:nth-child(2) { animation-delay: .2s; }
+  .rail__arrows i:nth-child(3) { animation-delay: .4s; }
+  .rail__name {
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    max-height: 260px;
+    overflow: hidden;
+  }
+  .rail--l .rail__name { transform: rotate(180deg); }
+}

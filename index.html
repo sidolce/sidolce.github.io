@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#141110">
+  <meta name="description" content="Si Dolce — ресторан у с. Путрівка. Меню, ціни та контакти.">
+  <title>Si Dolce — ресторан</title>
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <div class="hero__slides" id="heroSlides" aria-hidden="true">
+      <div class="hero__slide" style="background-image:url(img/hero-1.jpg)"></div>
+      <div class="hero__slide" style="background-image:url(img/hero-2.jpg)"></div>
+      <div class="hero__slide" style="background-image:url(img/hero-3.jpg)"></div>
+      <div class="hero__slide" style="background-image:url(img/hero-4.jpg)"></div>
+      <div class="hero__slide" style="background-image:url(img/hero-5.jpg)"></div>
+      <div class="hero__slide" style="background-image:url(img/hero-6.jpg)"></div>
+    </div>
+    <div class="hero__shade"></div>
+
+    <div class="hero__content">
+      <img class="hero__logo" src="img/logo.jpg" alt="Логотип Si Dolce" width="88" height="88">
+      <p class="hero__eyebrow">Ristorante · Caffè · Bar</p>
+      <h1 class="hero__title">Si Dolce</h1>
+      <p class="hero__address" id="heroAddress"></p>
+      <p class="hero__rating" id="heroRating"></p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#menu">Переглянути меню</a>
+        <a class="btn btn--ghost" href="#contacts">Контакти</a>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#menu" aria-label="Прокрутити до меню"></a>
+  </header>
+
+  <main id="menu">
+    <div class="menu-bar" id="menuBar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="search" placeholder="Пошук страви або напою" autocomplete="off" aria-label="Пошук по меню">
+      </div>
+      <nav class="chips" id="chips" aria-label="Категорії меню"></nav>
+    </div>
+
+    <div class="menu" id="menuList"></div>
+    <p class="menu__empty" id="menuEmpty" hidden>Нічого не знайдено 😔</p>
+  </main>
+
+  <section class="contacts" id="reviews">
+    <h2 class="section-title">Відгуки гостей</h2>
+    <div class="reviews">
+      <div class="score">
+        <span class="score__num" id="scoreNum">5.0</span>
+        <div>
+          <div class="score__stars">★★★★★</div>
+          <p class="score__meta" id="scoreMeta"></p>
+        </div>
+      </div>
+      <div class="review-actions">
+        <a class="btn btn--primary" id="reviewsLink" target="_blank" rel="noopener">Читати відгуки на Google</a>
+        <a class="btn btn--ghost" id="reviewWrite" target="_blank" rel="noopener">Залишити відгук</a>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="contacts">Чекаємо на вас</h2>
+    <div class="contacts__grid" id="contactsGrid"></div>
+    <iframe class="map" id="map" title="Si Dolce на карті" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Si Dolce. Ціни вказано в гривнях.</p>
+  </footer>
+
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet__backdrop" data-close></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <button class="sheet__close" data-close aria-label="Закрити">×</button>
+      <div class="sheet__body" id="sheetBody"></div>
+    </div>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

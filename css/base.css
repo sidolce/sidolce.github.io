@@ -1,0 +1,46 @@
+:root {
+  --bg: #141110;
+  --bg-soft: #1b1715;
+  --card: #1f1a17;
+  --card-hover: #26201c;
+  --line: #2f2824;
+  --text: #ede6dd;
+  --muted: #a59a8e;
+  --accent: #c9a15a;
+  --accent-deep: #a3762c;
+  --radius: 16px;
+  --font-head: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --bar-h: 116px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; }
+
+h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0; line-height: 1.2; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+body.no-scroll { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
